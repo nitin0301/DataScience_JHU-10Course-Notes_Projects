@@ -94,6 +94,41 @@ t <- read.table("NameofTheFile.txt", colClasses = classes)
 
 t <- c(1,2,3,5,NA,2,0)
 dput(t, file="temp.R")
+# to recreate this R file with data we do:
+dget("temp.R")
+# dump can be used on multiple R object. NOTE: dput() can be used only on 1 R object
+
+
+
+#####################################################################
+########################     Interface to the Outer World    ########
+#####################################################################
+
+# url : reads webpage into R
+
+con <- url("http://www.testSite.com","r")
+x <- readLines(con)
+
+
+
+#####################################################################
+########################     Subsetting    ##########################
+#####################################################################
+x <- c("1","2",NA,"d","0",NA)
+y <- c("p",NA,"d",NA,"q",NA)
+x[complete.cases(x,y)]
+y[complete.cases(x,y)]
+# complete.cases(x,y) -> Checks the non missing position COMBO in the two vectors
+# you can directly apply this to a data frame as well
+
+
+#####################################################################
+######################### Control Structures ########################
+#####################################################################
+
+
+
+
 
 
 

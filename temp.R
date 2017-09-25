@@ -1,2 +1,1 @@
-function (x) 
-UseMethod("t")
+c(1, 2, 3, 5, NA, 2, 0)
