@@ -123,8 +123,66 @@ y[complete.cases(x,y)]
 
 
 #####################################################################
-######################### Control Structures ########################
+#########################   Loop Functions   ########################
 #####################################################################
+
+# lapply : Loop over objects and apply a function on all those objects
+# sapply : 
+# apply
+# tapply
+# mapply
+
+# split : used in conjunctin with lapply, this splits a given object 
+#         in pieces and then does "lapply" on each of those pieces
+
+### lapply ###
+# lapply always returns a list
+
+x <- list(a = 1:4, b=runif(8),c=c(1,2,3,4,5,6,7,8,9,10))
+lapply(x,mean)
+
+
+a <- list(1:4)
+lapply(b,runif) # this will generate a list containing 1, 2, 3 and 4 random variables
+
+# You have to generally write a function for performing a lapply as 
+
+x <- list(a="hithere", b="nothithere")
+lapply(x,function(t) is.character(t))
+
+### sapply ###
+# simplifies lapply result
+# for example if the function result in a single number then it will creare a vector
+
+
+### apply ###
+
+p <- matrix(rnorm(100),10,10)
+apply(p, 1, mean) # preserves the 1st i.e. row dimension and takes a mean across all columns
+apply(p, 2, mean) # preserves the 2nd i.e. column dimension; collapse rows
+
+
+### mapply ###
+
+# Example: vectorize a function that doesn't allow for vectors
+
+mapply(noise, 1:5, 1:5, 1)
+
+
+### tapply ###
+# applies function on pieces of vector (this is identified by factor variables)
+
+
+### split function ###
+# split is same as tapply without applying the function
+
+
+#####################################################################
+#########################     SIMULATION    #########################
+#####################################################################
+
+# sample function takes randomly from a given set
+
 
 
 
